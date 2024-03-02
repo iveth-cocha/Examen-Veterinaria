@@ -112,7 +112,7 @@ const Dashboard = () => {
             </Link>
           </div>
         </div>
-        <div className="overflow-y-scroll p-8">
+        <div className="overflow-y-scroll p-8 flex-grow">
           {autenticado ? <Outlet /> : <Navigate to="/login" />}
         </div>
         <div className="bg-gray-800 h-12">

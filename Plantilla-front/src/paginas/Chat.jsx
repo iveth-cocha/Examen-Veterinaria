@@ -1,77 +1,84 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState,useContext } from "react";
 import io from "socket.io-client";
-
+import AuthContext from "../contex/AuthProvider";
 const Chat = () => {
   const [socket, setSocket] = useState(null);
   const [mensaje, setMensaje] = useState("");
+  const [mensajes, setMensajes] = useState([]);
+  const {auth} = useContext(AuthContext)
+
+  const authen = {
+    rol: auth.rol,
+    nombre: auth.nombre,
+    apellido: auth.apellido,
+  };
   const handleMensajeChat = () => {
-    if (socket) {
-      socket.emit("enviar-mensaje-fron-back", mensaje);
+    if (socket && mensaje.trim() !== "") {
+      socket.emit("enviar-mensaje-fron-back", { contenido: mensaje, auth: authen });
+      setMensajes([...mensajes, { contenido: mensaje, esMio: true, auth: authen }]);
+      setMensaje(""); // Limpiar el campo de entrada después de enviar el mensaje
     }
   };
+
   useEffect(() => {
     const newSocket = io("http://localhost:3000");
     setSocket(newSocket);
+
+    newSocket.on("mensaje-desde-servidor", (data) => {
+      setMensajes([...mensajes, { contenido: data.mensaje, esMio: false, auth: data.auth }]);
+    });
+
     return () => {
       newSocket.disconnect();
     };
-  }, []);
+  }, [mensajes]);
+
   return (
-    <div className="flex flex-col justify-evenly h-screen ">
-      <div className="flex flex-col space-y-4 p-3 overflow-y-auto scrollbar-thumb-blue scrollbar-thumb-rounded scrollbar-track-blue-lighter scrollbar-w-2 scrolling-touch">
-        <div className="chat-message">
-          <div className="flex items-end">
-            <div className="flex flex-col space-y-2 text-xs max-w-xs mx-2 order-2 items-start">
-              <div>
-                <span className="px-4 py-2 rounded-lg inline-block rounded-bl-none bg-gray-300 text-gray-600">
-                  Hola paciente
-                </span>
-              </div>
+    <div className="flex flex-col justify-between h-[100%] bg-gray-200 ">
+      <div className="flex flex-col flex-grow overflow-y-auto p-4 gap-3">
+        {mensajes.map((msg, index) => (
+          <div key={index} className={`max-w-xs ${msg.esMio ? "ml-auto" : "mr-auto"}`}>
+            <div
+              className={`rounded-lg p-2 ${
+                msg.esMio ? "bg-green-700 text-white" : "bg-gray-800 text-white"
+              }`}
+            >
+              <p>{msg.contenido}</p>
+              <p className="text-xs text-gray-300">
+                {msg.auth.rol? msg.auth.rol.charAt(0).toUpperCase() + msg.auth.rol.slice(1): "Sin rol"}: {msg.auth.nombre || "Anónimo"} {msg.auth.apellido || ""}
+              </p>
             </div>
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/2934/2934749.png"
-              alt="My profile"
-              className="w-14 h-14 rounded-full order-1 "
-            />
           </div>
-        </div>
-        <div className="chat-message">
-          <div className="flex items-end justify-end">
-            <div className="flex flex-col space-y-2 text-xs max-w-xs mx-2 order-1 items-end">
-              <div>
-                <span className="px-4 py-2 rounded-lg inline-block rounded-br-none bg-gray-700 text-white ">
-                  Hola doc, como le va?.
-                </span>
-              </div>
-            </div>
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/2105/2105138.png"
-              alt="My profile"
-              className="w-14 h-14 rounded-full order-2"
-            />
-          </div>
-        </div>
+        ))}
       </div>
-      <div className="border-t-2 border-gray-200 px-4 pt-4 mb-2 sm:mb-0">
+      <div className="border-t-2 border-gray-200 p-4">
         <div className="relative flex">
           <input
             type="text"
-            placeholder="Escribe tu mensaje!"
-            className="w-full focus:outline-none focus:placeholder-gray-400 text-gray-600 placeholder-gray-600 pl-2 bg-gray-200 rounded-md py-3"
+            placeholder="Escribe tu mensaje"
+            value={mensaje}
             onChange={(e) => setMensaje(e.target.value)}
+            className="flex-1 w-full focus:outline-none focus:placeholder-gray-400 text-gray-600 placeholder-gray-600 pl-2 bg-white rounded-md py-2 mr-2"
           />
-
-          <div className="absolute right-0 items-center inset-y-0 hidden sm:flex">
-            <button
-              type="button"
-              className="inline-flex items-center justify-center rounded-lg px-4 py-3 transition duration-500 ease-in-out text-white bg-green-800 hover:bg-green-600 focus:outline-none"
-              onClick={() => {
-                handleMensajeChat();
-              }}
+          <button
+            onClick={handleMensajeChat}
+            className="inline-flex items-center justify-center w-12 h-12 text-white bg-green-700 rounded-full"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
             >
-              <span className="font-bold">Send</span>
-            </button>
-          </div>
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+              />
+            </svg>
+          </button>
         </div>
       </div>
     </div>

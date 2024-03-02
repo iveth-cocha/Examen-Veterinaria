@@ -21,6 +21,16 @@ export const Formulario = ({paciente}) => {
     })
 
     const handleChange = (e) => {
+        const celularRegex = /^\d{0,10}$/;
+        if (e.target.name === 'celular' && (!celularRegex.test(e.target.value) && e.target.value !== "")) {
+            return; // No se actualiza el estado si la entrada no es válida para el celular
+        }
+        const convencionalRegex = /^\d{0,7}$/;
+        if (e.target.name === 'convencional' && (!convencionalRegex.test(e.target.value) && e.target.value !== "")) {
+            return; // No se actualiza el estado si la entrada no es válida para el convencional
+        }
+    
+        
         setform({...form,
             [e.target.name]:e.target.value
         })
@@ -38,11 +48,8 @@ export const Formulario = ({paciente}) => {
                     Authorization: `Bearer ${token}`
                 }
             }
-            await axios.post(url,form,options)
-						setMensaje({ respuesta:"paciente registrado con exito y correo enviado", tipo: true })
-            setTimeout(() => {
-                navigate('/dashboard/listar');
-            }, 3000);
+            await axios.put(url, form, options)
+            navigate('/dashboard/listar')
         }
         else {
             try {

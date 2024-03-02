@@ -8,22 +8,22 @@ const TratamientosProvider = ({ children }) => {
   const [tratamientos, setTratamientos] = useState([]);
   const [mensaje, setMensaje] = useState({});
 
-  const registrarTratamientos = async(datos) => {
-    const token = localStorage.getItem('token')
+  const registrarTratamientos = async (datos) => {
+    const token = localStorage.getItem("token");
     try {
-        const url = `${import.meta.env.VITE_BACKEND_URL}/tratamiento/registro`
-        const options={
-            headers: {
-                'Content-Type': 'application/json',
-                Authorization: `Bearer ${token}`
-            }
-        }
-        const respuesta= await axios.post(url,datos,options)
-        setTratamientos([respuesta.data.tratamiento,...tratamientos])
+      const url = `${import.meta.env.VITE_BACKEND_URL}/tratamiento/registro`;
+      const options = {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      };
+      const respuesta = await axios.post(url, datos, options);
+      setTratamientos([respuesta.data.tratamiento, ...tratamientos]);
     } catch (error) {
-        console.log(error);
+      console.log(error);
     }
-}
+  };
 
   const handleModal = () => {
     setModal(!modal);
