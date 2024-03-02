@@ -5,8 +5,6 @@ import bcrypt from "bcryptjs"
 
 
 // Crear el Schema "atributos de la tabla de la BDD"
-
-
 const veterinarioSchema = new Schema({
     nombre:{
         type:String,
@@ -50,13 +48,10 @@ const veterinarioSchema = new Schema({
         type:Boolean,
         default:false
     }
-    
+
 },{
     timestamps:true
 })
-
-
-
 
 // Método para cifrar el password del veterinario
 veterinarioSchema.methods.encrypPassword = async function(password){

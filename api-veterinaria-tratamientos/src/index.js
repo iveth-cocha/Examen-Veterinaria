@@ -9,18 +9,18 @@ connection()
 const server = http.createServer(app);
 const io = new Server(server, {
     cors: {
-        origin: "http://127.0.0.1:5173"
-    }
-})
-
-io.on('connection', (socket) => {
-    console.log('Usuario conectado');
-    
-    socket.on('enviar-mensaje-fron-back',(payload)=>{
-        socket.broadcast.emit('enviar-mensaje-fron-back',payload)
-    })
-
+        origin: "*",
+  },
 });
+
+io.on("connection", (socket) => {
+    socket.on("enviar-mensaje-fron-back", (data) => {
+      io.emit("mensaje-desde-servidor", { mensaje: data.contenido, auth: data.auth });
+    });
+    socket.on("disconnect", () => {
+    });
+  });
+
 
 
 server.listen(app.get('port'),()=>{

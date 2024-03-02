@@ -51,6 +51,7 @@ const sendMailToRecoveryPassword = async(userMail,token)=>{
 
 
 
+
 // send mail to patient
 const sendMailToPaciente = async(userMail,password)=>{
     let info = await transporter.sendMail({
@@ -61,9 +62,9 @@ const sendMailToPaciente = async(userMail,password)=>{
     <h1>Sistema de gestión (VET-ESFOT 🐶 😺)</h1>
     <hr>
     <p>Contraseña de acceso: ${password}</p>
-    <a href=${process.env.URL_BACKEND}paciente/login>Clic para iniciar sesión</a>
+    <a href=${process.env.URL_FRONTEND}login>Clic para iniciar sesión</a>
     <hr>
-    <footer>Grandote te da la Bienvenida!</footer>
+    <footer>Grandote te da la Bienvenida! holaaaaa</footer>
     `
     });
     console.log("Mensaje enviado satisfactoriamente: ", info.messageId);
