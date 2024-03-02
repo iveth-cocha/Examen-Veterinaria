@@ -38,8 +38,11 @@ export const Formulario = ({paciente}) => {
                     Authorization: `Bearer ${token}`
                 }
             }
-            await axios.put(url, form, options)
-            navigate('/dashboard/listar')
+            await axios.post(url,form,options)
+						setMensaje({ respuesta:"paciente registrado con exito y correo enviado", tipo: true })
+            setTimeout(() => {
+                navigate('/dashboard/listar');
+            }, 3000);
         }
         else {
             try {

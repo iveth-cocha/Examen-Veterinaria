@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { useState } from 'react'; // Agregado para importar useState
 import axios from 'axios';
+import Mensaje from '../componets/Alertas/Mensaje';
 
 export const Register = () => {
     const [form, setform] = useState({

@@ -59,9 +59,7 @@ const Password = () => {
         </p>
       </div>
       <form onSubmit={handleSubmit}>
-        {Object.keys(mensaje).length > 0 && (
-          <Mensaje tipo={mensaje.tipo}>{mensaje.respuesta}</Mensaje>
-        )}
+        {Object.keys(mensaje).length > 0 && <Mensaje tipo={mensaje.tipo}>{mensaje.respuesta}</Mensaje>}
         <div>
           <label
             htmlFor="passwordactual"
