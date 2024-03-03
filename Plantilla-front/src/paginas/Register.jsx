@@ -14,9 +14,26 @@ export const Register = () => {
     })
 
     const handleChange = (e) => {
-        const telefonoRegex = /^\d{0,10}$/;
-        if (e.target.name === 'telefono' && (!telefonoRegex.test(e.target.value) && e.target.value !== "")) {
-            return; // No se actualiza el estado si la entrada no es válida para el teléfono
+        if (e.target.name === 'nombre') {
+            // Verificar si el valor ingresado contiene solo letras
+            const onlyLetters = /^[A-Za-z\s]+$/;
+            if (!onlyLetters.test(e.target.value) && e.target.value !== "") {
+                return; // No se actualiza el estado si la entrada no es válida para el nombre
+            }
+        }
+        if (e.target.name === 'apellido') {
+            // Verificar si el valor ingresado contiene solo letras
+            const onlyLetters = /^[A-Za-z\s]+$/;
+            if (!onlyLetters.test(e.target.value) && e.target.value !== "") {
+                return; // No se actualiza el estado si la entrada no es válida para el nombre
+            }
+        } 
+        else if (e.target.name === 'telefono') {
+            // Validación para el campo de teléfono si es necesario
+            const telefonoRegex = /^\d{0,10}$/;
+            if (!telefonoRegex.test(e.target.value) && e.target.value !== "") {
+                return; // No se actualiza el estado si la entrada no es válida para el teléfono
+            }
         }
             setform({...form,
                 [e.target.name]:e.target.value
