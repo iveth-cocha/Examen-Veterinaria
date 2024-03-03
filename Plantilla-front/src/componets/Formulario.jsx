@@ -22,29 +22,29 @@ export const Formulario = ({paciente}) => {
 
     const handleChange = (e) => {
         if (e.target.name === 'nombre') {
-            // Verificar si el valor ingresado contiene solo letras
+            
             const onlyLetters = /^[A-Za-z\s]+$/;
             if (!onlyLetters.test(e.target.value) && e.target.value !== "") {
-                return; // No se actualiza el estado si la entrada no es válida para el nombre
+                return; 
             }
         }if (e.target.name === 'propietario') {
-            // Verificar si el valor ingresado contiene solo letras
+            
             const onlyLetters = /^[A-Za-z\s]+$/;
             if (!onlyLetters.test(e.target.value) && e.target.value !== "") {
-                return; // No se actualiza el estado si la entrada no es válida para el nombre
+                return; 
             }
         }
         if (e.target.name === 'celular') {
-            // Validación para el campo de teléfono si es necesario
+            
             const telefonoRegex = /^\d{0,10}$/;
             if (!telefonoRegex.test(e.target.value) && e.target.value !== "") {
-                return; // No se actualiza el estado si la entrada no es válida para el teléfono
+                return; 
             }
         }if (e.target.name === 'convencional') {
-            // Validación para el campo de teléfono si es necesario
+            
             const telefonoRegex = /^\d{0,7}$/;
             if (!telefonoRegex.test(e.target.value) && e.target.value !== "") {
-                return; // No se actualiza el estado si la entrada no es válida para el teléfono
+                return; 
             }
         }
     

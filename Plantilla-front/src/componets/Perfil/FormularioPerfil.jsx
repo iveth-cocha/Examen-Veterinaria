@@ -20,16 +20,16 @@ const FormularioPerfil = () => {
 
     const handleChange = (e) => {
         if (e.target.name === 'nombre' || e.target.name === 'apellido') {
-            // Validar solo letras para los campos de nombre y apellido
+            
             const onlyLetters = /^[A-Za-z\s]+$/;
             if (!onlyLetters.test(e.target.value) && e.target.value !== "") {
-                return; // No se actualiza el estado si la entrada no es válida para nombre o apellido
+                return;
             }
         } else if (e.target.name === 'telefono') {
-            // Validar solo números para el campo de teléfono
+            
             const onlyNumbers = /^\d*$/;
             if (!onlyNumbers.test(e.target.value) && e.target.value !== "") {
-                return; // No se actualiza el estado si la entrada no es válida para el teléfono
+                return; 
             }
         }
         setform({
