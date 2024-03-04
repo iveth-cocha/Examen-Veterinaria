@@ -23,7 +23,7 @@ const swaggerSpec = {
     },
     servers: [
         {
-            url: 'http://localhost:3000',
+            url: 'https://petclinic-ckki.onrender.com',
         },
         {
             //url: '',
