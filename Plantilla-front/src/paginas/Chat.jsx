@@ -21,7 +21,7 @@ const Chat = () => {
   };
 
   useEffect(() => {
-    const newSocket = io("http://localhost:3000");
+    const newSocket = io(import.meta.env.VITE_BACKEND);
     setSocket(newSocket);
 
     newSocket.on("mensaje-desde-servidor", (data) => {
