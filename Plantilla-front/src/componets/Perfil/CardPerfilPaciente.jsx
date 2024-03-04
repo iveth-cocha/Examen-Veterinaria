@@ -17,7 +17,7 @@ export const CardPerfilPaciente = () => {
                 <b>Nombre del Propietario:</b><p className="inline-block ml-3">{auth.propietario}</p>
             </div >
             <div className="self-start">
-                <b>Email del Propietario:</b><p className="inline-block ml-3">{auth.emailP}</p>
+                <b>Email del Propietario:</b><p className="inline-block ml-3">{auth.email}</p>
             </div>
             <div className="self-start">
                 <b>Celular del Propietario:</b><p className="inline-block ml-3">{auth.celular}</p>
