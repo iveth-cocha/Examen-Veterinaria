@@ -37,6 +37,7 @@ const Visualizar = () => {
         };
         const respuesta = await axios.get(url, options);
         setPaciente(respuesta.data.paciente);
+        setTratamientos(respuesta.data.tratamientos);
       } catch (error) {}
     };
     consultarPaciente();
