@@ -97,7 +97,7 @@ const Login = () => {
 
                     <button className="bg-white border py-2 w-full rounded-xl mt-5 flex justify-center items-center text-sm hover:scale-105 duration-300 hover:bg-blue-600 hover:text-white">
                         <img className="w-5 mr-2" src="https://cdn-icons-png.flaticon.com/512/733/733547.png" />
-                        Sign in with Google
+                        Sign in with Facebook
                     </button>
 
                     <div className="mt-5 text-xs border-b-2 py-4 ">
@@ -105,7 +105,7 @@ const Login = () => {
                     </div>
 
                     <div className="mt-3 text-sm flex justify-between items-center">
-                        <p>Don't have an account?</p>
+                        <p>No tienes una cuenta aún</p>
                         <Link to="/register" className="py-2 px-5 bg-gray-600 text-slate-300 border rounded-xl hover:scale-110 duration-300 hover:bg-gray-900 hover:text-white">Register</Link>
 
                     </div>

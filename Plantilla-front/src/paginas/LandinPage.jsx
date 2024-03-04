@@ -32,9 +32,9 @@ export const LandinPage = () => {
                     </nav>
 
                     <div className='text-center'>
-                        <h2 className='text-5xl py-2 text-teal-600 font-medium md:text-6xl'>Proyect Demo</h2>
-                        <h3 className='text-2xl py-2 md:text-3xl dark:text-white'>Scalable and Responsive</h3>
-                        <p className='text-md py-5 leading-8 text-gray-800 md:text-xl max-w-lg mx-auto dark:text-white'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel vero dolore pariatur asperiores voluptatibus sunt optio iste atque animi id odio aliquid sapiente voluptatem, accusantium, ea sed quibusdam a. Itaque.</p>
+                        <h2 className='text-5xl py-2 text-teal-600 font-medium md:text-6xl'>Proyecto Grupo 4</h2>
+                        <h3 className='text-2xl py-2 md:text-3xl dark:text-white'>Integrantes</h3>
+                        <p className='text-md py-5 leading-8 text-gray-800 md:text-xl max-w-lg mx-auto dark:text-white'>Jhordy Aguas,Melani Barrera, Dennis Cataña, Iveth Cocha, David Lascano ,Brandon Sandoval, Andrew Vilcacundo y Washington Villares</p>
                     </div>
 
                     <div className='text-5xl flex justify-center gap-16 py-3'>
@@ -52,7 +52,7 @@ export const LandinPage = () => {
 
                 <section>
                     <div>
-                        <h3 className='text-3xl py-1 dark:text-white'>Services offered</h3>
+                        <h3 className='text-3xl py-1 dark:text-white'>Api -Veterinaria</h3>
                         <p className='text-md py-2 leading-8 text-gray-800 dark:text-white'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae, delectus iure <span className='text-teal-500'>quibusdam</span> quas quaerat itaque, est minima ducimus recusandae illo ipsam numquam nam earum libero <span className='text-teal-500'>deleniti</span> voluptatem! Autem, veniam ut.</p>
                         <p className='text-md py-2 leading-8 text-gray-800 dark:text-white'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae, delectus iure <span className='text-teal-500'>quibusdam</span> quas quaerat itaque, est minima ducimus recusandae illo ipsam numquam nam earum libero <span className='text-teal-500'>deleniti</span> voluptatem! Autem, veniam ut.</p>
                     </div>
