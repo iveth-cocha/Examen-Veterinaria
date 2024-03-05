@@ -1,10 +1,10 @@
 [Grupo 4](https://docs.google.com/presentation/d/19FLfPgRW08aPcyAuAG3L3s3x805VmVKNbGElExZveXc/edit?usp=sharing)
 #### Pruebas unitarias
-- [P. IUnitaris de Back](https://github.com/LascanoAldahir/veterinario---personal)
+- [P. Unitaris de Back](https://github.com/LascanoAldahir/veterinario---personal)
 - [P. Unitarias deFront](https://github.com/LascanoAldahir/Proyecto-final-personal)
 #### Deploy
-- [Back]()
-- [Front]()
+- [Back](https://petclinic-ckki.onrender.com)
+- [Front](https://petclinic-n.netlify.app/)
 
 <img width="477" alt="image" src="https://github.com/iveth-cocha/Examen-Veterinaria/assets/117743828/dd94dae0-2c4c-4ee6-bcc4-043291c9522c"><br>
 
