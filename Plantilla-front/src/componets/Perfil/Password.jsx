@@ -67,7 +67,7 @@ const Password = () => {
             htmlFor="passwordactual"
             className="text-gray-700 uppercase font-bold text-sm"
           >
-            Password actual:{" "}
+            Contraseña actual:{" "}
           </label>
           <input
             id="passwordactual"
@@ -85,7 +85,7 @@ const Password = () => {
             htmlFor="passwordnuevo"
             className="text-gray-700 uppercase font-bold text-sm"
           >
-            Nuevo password:{" "}
+            Nueva contraseña:{" "}
           </label>
           <input
             id="passwordnuevo"

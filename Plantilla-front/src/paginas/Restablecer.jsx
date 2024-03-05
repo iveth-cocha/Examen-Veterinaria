@@ -61,19 +61,19 @@ const Restablecer = () => {
         <div className="flex flex-col items-center justify-center">
 
             {Object.keys(mensaje).length > 0 && <Mensaje tipo={mensaje.tipo}>{mensaje.respuesta}</Mensaje>}
-            <h1 className="text-3xl font-semibold mb-2 text-center uppercase  text-gray-500">Welcome again</h1>
-            <small className="text-gray-400 block my-4 text-sm">Please enter your details</small>
+            <h1 className="text-3xl font-semibold mb-2 text-center uppercase  text-gray-500">Bienvenido</h1>
+            <small className="text-gray-400 block my-4 text-sm">Ingresa tu email</small>
             <img className="object-cover h-80 w-80 rounded-full border-4 border-solid border-slate-600" src={logoDog} alt="image description" />
             {tokenback &&
                 <form className='w-full' onSubmit={handleSubmit}>
                     <div className="mb-1">
-                        <label className="mb-2 block text-sm font-semibold">Password</label>
+                        <label className="mb-2 block text-sm font-semibold">Nueva Contraseña</label>
                         <input type="password" placeholder="Enter your password" className="block w-full rounded-md border border-gray-300 focus:border-purple-700 focus:outline-none focus:ring-1 focus:ring-purple-700 py-1 px-1.5 text-gray-500"
                             value={form.password || ""}
                             name='password'
                             onChange={handleChange}
                         />
-                        <label className="mb-2 block text-sm font-semibold">Confirm password</label>
+                        <label className="mb-2 block text-sm font-semibold">Confirmar Contraseña</label>
                         <input type="password" placeholder="Repeat your password" className="block w-full rounded-md border border-gray-300 focus:border-purple-700 focus:outline-none focus:ring-1 focus:ring-purple-700 py-1 px-1.5 text-gray-500"
                             value={form.confirmpassword || ""}
                             name='confirmpassword'

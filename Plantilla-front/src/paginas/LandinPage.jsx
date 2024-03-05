@@ -53,8 +53,8 @@ export const LandinPage = () => {
                 <section>
                     <div>
                         <h3 className='text-3xl py-1 dark:text-white'>Api -Veterinaria</h3>
-                        <p className='text-md py-2 leading-8 text-gray-800 dark:text-white'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae, delectus iure <span className='text-teal-500'>quibusdam</span> quas quaerat itaque, est minima ducimus recusandae illo ipsam numquam nam earum libero <span className='text-teal-500'>deleniti</span> voluptatem! Autem, veniam ut.</p>
-                        <p className='text-md py-2 leading-8 text-gray-800 dark:text-white'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae, delectus iure <span className='text-teal-500'>quibusdam</span> quas quaerat itaque, est minima ducimus recusandae illo ipsam numquam nam earum libero <span className='text-teal-500'>deleniti</span> voluptatem! Autem, veniam ut.</p>
+                        <p className='text-md py-2 leading-8 text-gray-800 dark:text-white'>Versión 1.0</p>
+                        <p className='text-md py-2 leading-8 text-gray-800 dark:text-white'>Permite el resgistro de veterinarios en el sistema, los veterinarios tienen los permisos de registrar pacientes pacientes y tratamientos. Los pacietes registrados solo tienen el permiso de ver su informacion y visualizar el detalle del tratamiento </p>
                     </div>
 
                     <div className='md:flex md:flex-wrap lg:flex lg:justify-center gap-10'>
@@ -67,24 +67,8 @@ export const LandinPage = () => {
                             <p className='text-gray-800 py-1'>Illustrator</p>
                             <p className='text-gray-800 py-1'>Figma</p>
                         </div>
-                        <div className='text-center shadow-2xl p-10 rounded-xl my-10 md:w-72 lg:w-96 dark:bg-slate-300'>
-                            <img className='mx-auto' src={logoConsulting} alt="" />
-                            <h3 className='text-lg font-medium pt-8 pb-2'>Beautiful Designs</h3>
-                            <p className='py-4 text-teal-600'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias repudiandae aliquid dolores officiis neque. Voluptatem quod nemo, totam iste atque id aspernatur porro laborum, non quo, pariatur nobis natus consectetur?</p>
-                            <p className='text-gray-800 py-1'>Tools used</p>
-                            <p className='text-gray-800 py-1'>Photoshop</p>
-                            <p className='text-gray-800 py-1'>Illustrator</p>
-                            <p className='text-gray-800 py-1'>Figma</p>
-                        </div>
-                        <div className='text-center shadow-2xl p-10 rounded-xl my-10 md:w-72 lg:w-96 dark:bg-slate-100'>
-                            <img className='mx-auto' src={logoDesign} alt="" />
-                            <h3 className='text-lg font-medium pt-8 pb-2'>Beautiful Designs</h3>
-                            <p className='py-4 text-teal-600'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias repudiandae aliquid dolores officiis neque. Voluptatem quod nemo, totam iste atque id aspernatur porro laborum, non quo, pariatur nobis natus consectetur?</p>
-                            <p className='text-gray-800 py-1'>Tools used</p>
-                            <p className='text-gray-800 py-1'>Photoshop</p>
-                            <p className='text-gray-800 py-1'>Illustrator</p>
-                            <p className='text-gray-800 py-1'>Figma</p>
-                        </div>
+                       
+                        
                     </div>
                 </section>
 
