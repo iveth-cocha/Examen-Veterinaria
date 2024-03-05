@@ -6,9 +6,11 @@ const AuthContext = createContext()
 const AuthProvider = ({ children }) => {
     const [auth, setAuth] = useState({})
 
-    const perfil = async (token) => {
+    const perfil = async (token,rol) => {
         try {
-            const url = `${import.meta.env.VITE_BACKEND_URL}/perfil`
+            const url = "paciente"== rol
+            ? `${import.meta.env.VITE_BACKEND_URL}/paciente/perfil`
+            : `${import.meta.env.VITE_BACKEND_URL}/perfil`
             const options = {
                 headers: {
                     'Content-Type': 'application/json',
@@ -23,8 +25,9 @@ const AuthProvider = ({ children }) => {
     }
     useEffect(() => {
         const token = localStorage.getItem('token')
+        const rol = localStorage.getItem('rol')
         if (token) {
-            perfil(token)
+            perfil(token,rol)
         }
     }, [])
 

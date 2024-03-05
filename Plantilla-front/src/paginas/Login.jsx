@@ -29,9 +29,13 @@ const Login = () => {
         const url = form.password.includes("vet")
             ? `${import.meta.env.VITE_BACKEND_URL}/paciente/login`
             : `${import.meta.env.VITE_BACKEND_URL}/login`
+        const rol = form.password.includes("vet")
+            ? "paciente"
+            : "veterinario"
         try {
             const respuesta = await axios.post(url, form)
             localStorage.setItem('token', respuesta.data.token)
+            localStorage.setItem('rol', rol)
             setAuth(respuesta.data)
             navigate('/dashboard')
         } catch (error) {

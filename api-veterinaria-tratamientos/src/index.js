@@ -24,5 +24,5 @@ io.on("connection", (socket) => {
 
 
 server.listen(app.get('port'),()=>{
-    console.log(`Server ok on http://localhost:${app.get('port')}`);
+    console.log(`Server ok on ${process.env.URL_BACKEND + " Puerto: " +app.get('port')}`);
 })
